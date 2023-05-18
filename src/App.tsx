@@ -1,12 +1,25 @@
-import { Md11Mp, MdFace } from "react-icons/md";
+import { MdFace } from "react-icons/md";
 import { Button } from "./components/ui/Button";
 import ModalBox from "./components/ui/ModalBox";
 import RightSideBox from "./components/ui/RightSideBox";
 import Heading from "./components/ui/Heading";
+import Paragraph from "./components/ui/Paragraph";
 
 const App = () => {
   return (
     <div className="">
+      <Heading size={"large3"}>Title</Heading>
+      <Heading align={"center"} size={"large2"}>
+        Title
+      </Heading>
+      <Heading align={"end"} size={"large1"}>
+        Title
+      </Heading>
+      <Heading align={"center"}>Title</Heading>
+      <Heading size={"small1"}>Title</Heading>
+      <Heading size={"small2"}>Title</Heading>
+      <Heading size={"small3"}>Title</Heading>
+
       <ModalBox btn={<Button>Button</Button>}>
         <div className="flex flex-col gap-5">
           {" "}
@@ -54,11 +67,29 @@ const App = () => {
       <RightSideBox btn={<Button>Side Box</Button>}>
         <h1>hi</h1>
       </RightSideBox>
-      <Heading>hi</Heading>
-      <Button>Button</Button>
-      <Button variant={"outline"} rounded={"full"}>
+
+      <Button onClick={() => alert("hi")}>Button</Button>
+      <Button variant={"link"} rounded={"full"}>
         link
       </Button>
+      <Paragraph size={"large"} className=" xl:w-1/2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
+        optio perferendis blanditiis architecto itaque et alias cumque totam.
+        Ipsum nisi eaque recusandae dicta. Dignissimos neque qui soluta
+        repudiandae expedita! Veniam.
+      </Paragraph>
+      <Paragraph className=" xl:w-1/2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
+        optio perferendis blanditiis architecto itaque et alias cumque totam.
+        Ipsum nisi eaque recusandae dicta. Dignissimos neque qui soluta
+        repudiandae expedita! Veniam.
+      </Paragraph>
+      <Paragraph size={"small"} className=" xl:w-1/2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
+        optio perferendis blanditiis architecto itaque et alias cumque totam.
+        Ipsum nisi eaque recusandae dicta. Dignissimos neque qui soluta
+        repudiandae expedita! Veniam.
+      </Paragraph>
     </div>
   );
 };
