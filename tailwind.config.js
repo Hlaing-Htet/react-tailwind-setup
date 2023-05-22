@@ -46,6 +46,14 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(100%)" },
         },
+        leftIn: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        leftOut: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
         fakeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
@@ -69,6 +77,8 @@ export default {
         "top-out": "topOut 0.3s ease ",
         "right-in": "rightIn 0.3s ease ",
         "right-out": "rightOut 0.3s ease ",
+        "left-in": "leftIn 0.3s ease ",
+        "left-out": "leftOut 0.3s ease ",
         "fake-in": "fakeIn 0.3s ease ",
         "fake-out": "fakeOut 0.3s ease ",
         "high-in": "highIn 0.2s ease ",
