@@ -4,7 +4,7 @@ import { cn } from "../../utils/TailwindClass";
 import * as React from "react";
 
 const buttonVariants = cva(
-  "flex items-center  gap-1 justify-center  disabled:bg-grey4 disabled:cursor-not-allowed transition-all duration-100 active:-translate-y-1 ",
+  "flex items-center  gap-1 justify-center  disabled:bg-grey4 disabled:cursor-not-allowed transition-all duration-100 active:-translate-y-0 ",
   {
     variants: {
       variant: {
