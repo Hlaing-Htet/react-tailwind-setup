@@ -40,6 +40,7 @@ const LeftSideBox = ({
 
             <div className="overflow-auto ">{children}</div>
           </div>
+          <div onClick={() => closeBtn()} className="flex-grow h-full"></div>
         </div>
       )}
     </div>
