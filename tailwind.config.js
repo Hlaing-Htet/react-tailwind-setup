@@ -23,10 +23,10 @@ export default {
       black: "#000000",
       black1: "#1E1E1E",
       black2: "#333333",
-      pending: "#DAC508",
-      error: "#EA180B",
-      activeGreen: "#07B218",
-      acitveBlue: "#0643B9",
+      yellow: "#DAC508",
+      red: "#EA180B",
+      green: "#07B218",
+      blue: "#0643B9",
     },
     extend: {
       keyframes: {

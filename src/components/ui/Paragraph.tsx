@@ -4,13 +4,14 @@ import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../utils/TailwindClass";
 
 export const paragraphVariants = cva(
-  " text-slate-700 dark:text-slate-300 text-center",
+  " text-slate-700 dark:text-slate-300  text-center",
   {
     variants: {
       size: {
-        default: " text-sm md:text-md xl:text-lg ",
+        default: "text-xs md:text-sm xl:text-base ",
+        mediun: " text-sm md:text-base xl:text-lg ",
         large: " text-lg md:text-xl xl:text-2xl ",
-        small: "text-xs md:text-sm xl:text-md ",
+        small2: "text-[10px] xl:text-xs",
       },
       opacity: {
         opacity25: "opacity-25",

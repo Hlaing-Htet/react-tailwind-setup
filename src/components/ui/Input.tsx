@@ -18,9 +18,9 @@ const inputVariants = cva(
       },
       state: {
         active: "ring-2 ring-brandColor1",
-        error: "border-red-500",
+        error: "border-red",
         focus: "ring-2 ring-brandColor2",
-        disabled: "bg-gray-200 text-gray-500 cursor-not-allowed",
+        disabled: "  cursor-not-allowed",
       },
     },
     defaultVariants: {
@@ -58,7 +58,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       placeholder,
       active = false,
       error = false,
-      disabled = false,
+      disabled,
       leadIcon,
       tailIcon,
       passwordVisible = false,
@@ -77,9 +77,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const stateClasses = [
       active ? " " : "",
-      error ? "border-error" : "",
+      error ? "border-red" : "",
       !active && !error ? "" : "",
-      disabled ? "bg-gray-200 text-gray-500 cursor-not-allowed" : "",
+      disabled ? " bg-grey2 opacity-50 cursor-not-allowed" : "",
     ];
 
     const inputClasses = cn(
@@ -123,7 +123,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ) : null}
         </div>
         {error && errorMessage && (
-          <div className="mb-2 text-sm text-error">{errorMessage}</div>
+          <div className="mt-2 text-sm text-red">{errorMessage}</div>
         )}
       </div>
     );
