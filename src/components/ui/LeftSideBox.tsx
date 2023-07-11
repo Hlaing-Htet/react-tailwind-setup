@@ -4,9 +4,11 @@ import { MdClose } from "react-icons/md";
 const LeftSideBox = ({
   children,
   btn,
+  z = 1000,
 }: {
   children?: ReactNode;
   btn: ReactElement;
+  z?: number;
 }) => {
   const [isOpen, setisOpen] = useState(false);
   const [isClose, setisClose] = useState(false);
@@ -28,7 +30,9 @@ const LeftSideBox = ({
         {btn}
       </div>
       {isOpen && (
-        <div className="fixed top-0 left-0 z-50 flex justify-start w-screen h-screen bg-black bg-opacity-50 ">
+        <div
+          className={`fixed top-0 left-0 z-[${z}] flex justify-start w-screen h-screen bg-black bg-opacity-50 `}
+        >
           <div
             className={` ${
               isClose ? " animate-left-out" : " animate-left-in"

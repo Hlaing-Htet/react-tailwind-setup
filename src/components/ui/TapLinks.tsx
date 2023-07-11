@@ -10,7 +10,7 @@ export function TapLinks({
 }) {
   return (
     <ul className="flex items-center gap-5 text-lg md:gap-5 ">
-      {links.map((link, index) => (
+      {links?.map((link, index) => (
         <li key={index}>
           <NavLink
             to={`${link}`}
@@ -18,8 +18,8 @@ export function TapLinks({
               isActive
                 ? ` py-1   ${
                     underLine
-                      ? " border-b-2 border-brandColor1"
-                      : "text-white rounded-lg px-4 bg-brandColor1"
+                      ? " border-b-2 border-primary"
+                      : "text-white rounded-lg px-4 bg-primary"
                   } flex items-center gap-2`
                 : "   flex items-center gap-2 "
             }

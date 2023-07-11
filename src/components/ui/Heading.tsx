@@ -12,7 +12,7 @@ const headingVariants = cva("text-black ", {
       large3: " text-3xl md:text-4xl xl:text-5xl font-bold",
       small1: " text-md md:text-lg xl:text-xl font-semibold",
       small2: " text-sm md:text-md xl:text-lg font-semibold",
-      small3: "text-xs md:text-sm xl:text-md font-medium",
+      small3: "text-xs md:text-sm xl:text-base font-medium",
     },
 
     opacity: {

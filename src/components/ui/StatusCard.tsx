@@ -24,9 +24,9 @@ const StatusCard = ({
 }: StatusCardProps) => {
   return (
     <article
-      className={`flex flex-col bg-white hover:shadow-lg ${shadowColor} items-center justify-center gap-2 p-5 border rounded-xl ${borderColor}`}
+      className={`flex flex-col bg-white hover:shadow-lg min-w-[160px] md:min-w-[270px] ${shadowColor} items-center justify-center gap-2 p-5 border rounded-xl ${borderColor}`}
     >
-      <div className={`p-3 bg-opacity-25 rounded-full ${bgColor}`}>
+      <div className={`p-3 bg-opacity-20 rounded-full ${bgColor}`}>
         <Icon className={`text-3xl ${textColor}`} />{" "}
         {/* Pass className as a spread attribute */}
       </div>

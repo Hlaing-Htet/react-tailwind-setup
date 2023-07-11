@@ -9,15 +9,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          " bg-brandColor1 text-white hover:text-brandColor1 hover:bg-white  hover:outline-1 hover:-outline-offset-1 hover:outline disabled:active:translate-y-0 disabled:hover:outline-none disabled:hover:text-white",
+          " bg-primary text-white hover:text-primary hover:bg-white  hover:outline-1 hover:-outline-offset-1 hover:outline disabled:active:translate-y-0 disabled:hover:outline-none disabled:hover:text-white",
         secondary:
-          " bg-brandColor2 text-white hover:text-brandColor2 hover:bg-white  hover:outline-1 hover:-outline-offset-1 hover:outline disabled:active:translate-y-0 disabled:hover:outline-none disabled:hover:text-white",
+          " bg-secondary text-white hover:text-secondary hover:bg-white  hover:outline-1 hover:-outline-offset-1 hover:outline disabled:active:translate-y-0 disabled:hover:outline-none disabled:hover:text-white",
         outline:
-          " bg-white text-brandColor1 outline -outline-offset-2 outline-brandColor1 hover:bg-brandColor1 hover:text-white",
+          " bg-white text-primary outline -outline-offset-2 outline-primary hover:bg-primary hover:text-white",
         secondaryOutline:
-          " bg-white text-brandColor2 outline -outline-offset-2 outline-brandColor2 hover:bg-brandColor2 hover:text-white",
+          " bg-white text-secondary outline -outline-offset-2 outline-secondary hover:bg-secondary hover:text-white",
 
-        link: "bg-transparent dark:bg-transparent underline underline-offset-4 hover:no-underline text-brandColor1 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
+        link: "bg-transparent dark:bg-transparent underline underline-offset-4 hover:no-underline text-primary dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
+        text: "bg-transparent dark:bg-transparent   text-primary  hover:bg-transparent dark:hover:bg-transparent",
+        tag: "bg-white text-primary  cursor-default border border-primary",
       },
       size: {
         default: " w-fit h-10 px-6",
@@ -45,6 +47,8 @@ const buttonVariants = cva(
       },
       rounded: {
         default: "rounded",
+        lg: "rounded-lg",
+        xl: "rounded-xl",
         full: "rounded-full",
       },
     },

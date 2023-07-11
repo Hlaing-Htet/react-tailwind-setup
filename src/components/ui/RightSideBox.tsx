@@ -4,9 +4,11 @@ import { MdClose } from "react-icons/md";
 const RightSideBox = ({
   children,
   btn,
+  z = "z-[1000]",
 }: {
   children?: ReactNode;
   btn: ReactElement;
+  z?: string;
 }) => {
   const [isOpen, setisOpen] = useState(false);
   const [isClose, setisClose] = useState(false);
@@ -28,7 +30,9 @@ const RightSideBox = ({
         {btn}
       </div>
       {isOpen && (
-        <div className="fixed top-0 left-0 z-50 flex justify-end w-screen h-screen bg-black bg-opacity-50 ">
+        <div
+          className={`fixed top-0 left-0 ${z} flex  justify-end w-screen h-screen bg-black bg-opacity-50 `}
+        >
           <div onClick={() => closeBtn()} className="flex-grow h-full"></div>
           <div
             className={` ${
@@ -39,7 +43,7 @@ const RightSideBox = ({
               <MdClose className="cursor-pointer " onClick={() => closeBtn()} />
             </div>
 
-            <div className="overflow-auto ">{children}</div>
+            <div>{children}</div>
           </div>
         </div>
       )}

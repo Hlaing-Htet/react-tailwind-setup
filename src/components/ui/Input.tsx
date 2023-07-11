@@ -17,9 +17,9 @@ const inputVariants = cva(
         full: "rounded-full",
       },
       state: {
-        active: "ring-2 ring-brandColor1",
+        active: "ring-2 ring-primary",
         error: "border-red",
-        focus: "ring-2 ring-brandColor2",
+        focus: "ring-2 ring-secondary",
         disabled: "  cursor-not-allowed",
       },
     },
