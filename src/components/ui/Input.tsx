@@ -4,7 +4,7 @@ import * as React from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const inputVariants = cva(
-  "relative flex items-center w-full focus:ring-primary focus:border-primary  px-4 py-2  rounded-md",
+  "relative flex items-center w-full dark:bg-black3 focus:ring-primary focus:border-primary  px-4 py-2  rounded-md",
   {
     variants: {
       size: {

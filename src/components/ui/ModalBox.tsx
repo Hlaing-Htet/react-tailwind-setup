@@ -72,7 +72,7 @@ const ModalBox = ({
           <div
             className={` ${
               isClose ? `${animateOut}` : `${animateIn}`
-            } w-full relative  ${wmd} ${wlg} rounded-lg bg-white px-5 py-5 ${
+            } w-full relative  ${wmd} ${wlg} rounded-lg bg-white dark:bg-black2 px-5 py-5 ${
               heightFull ? "h-2/3 sm:h-full" : "max-h-full"
             } overflow-y-auto overflow-x-hidden `}
           >

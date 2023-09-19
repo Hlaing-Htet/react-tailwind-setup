@@ -55,7 +55,7 @@ const LeftSideBox = ({
           <div
             className={` ${
               isClose ? " animate-left-out" : " animate-left-in"
-            }   relative  ${w}  bg-white min-h-screen overflow-auto p-5 flex flex-col `}
+            }   relative  ${w} dark:bg-black1 bg-white min-h-screen overflow-auto p-5 flex flex-col `}
           >
             <div className="sticky top-0 right-0 flex justify-end w-full ">
               <MdClose className="cursor-pointer " onClick={() => closeBtn()} />
