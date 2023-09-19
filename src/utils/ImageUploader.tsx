@@ -6,12 +6,12 @@ export const uploadFileHandler = async (
   setIcon(file);
 };
 
-export const deleteMainImageHandler = async (
+export const deleteFileHandler = async (
   setIcon: React.Dispatch<React.SetStateAction<any>>
 ) => {
   setIcon(null);
 };
-export const mutipleFilesUploadHandler = async (
+export const multipleFilesUploadHandler = async (
   e: any,
   setFiles: React.Dispatch<React.SetStateAction<any>>
 ) => {

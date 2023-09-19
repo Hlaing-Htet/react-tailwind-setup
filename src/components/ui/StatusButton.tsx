@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Paragraph from "./Paragraph";
 
-const StatusBotton = ({ status }: { status: string }) => {
+const StatusButton = ({ status }: { status: string }) => {
   const [activeBackGroundColor, setActiveBackGroundColor] = useState("");
   const [activeTextColor, setActiveTextColor] = useState("");
   const [displayText, setDisplayText] = useState("");
@@ -56,4 +56,4 @@ const StatusBotton = ({ status }: { status: string }) => {
   );
 };
 
-export default StatusBotton;
+export default StatusButton;

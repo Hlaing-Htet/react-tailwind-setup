@@ -9,27 +9,27 @@ export default {
   ],
 
   theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-
-      primary: "#388267",
-      secondary: "#1D4966",
-      white: "#ffffff",
-      grey1: "#F5F5F5",
-      grey2: "#EAEAEA",
-      grey3: "#CCCCCC",
-      grey4: "#B4B4B4",
-      black: "#000000",
-      black1: "#111111",
-      black2: "#1E1E1E",
-      black3: "#333333",
-      yellow: "#DAC508",
-      red: "#EA180B",
-      green: "#07B218",
-      blue: "#0643B9",
-    },
     extend: {
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+
+        primary: "#388267",
+        secondary: "#1D4966",
+        white: "#ffffff",
+        grey1: "#F5F5F5",
+        grey2: "#EAEAEA",
+        grey3: "#CCCCCC",
+        grey4: "#B4B4B4",
+        black: "#000000",
+        black1: "#111111",
+        black2: "#1E1E1E",
+        black3: "#333333",
+        yellow: "#DAC508",
+        red: "#EA180B",
+        green: "#07B218",
+        blue: "#0643B9",
+      },
       keyframes: {
         topIn: {
           "0%": { transform: "translateY(-400%)" },

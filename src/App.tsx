@@ -1,6 +1,6 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Route, Routes, useRoutes } from "react-router-dom";
-import AdminRoutes from "@/routers/AdminRoutes";
+import { AdminRoutes } from "./routers";
 const queryClient = new QueryClient();
 const App = () => {
   const AdminRouting = useRoutes(AdminRoutes);

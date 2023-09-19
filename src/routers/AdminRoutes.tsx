@@ -1,10 +1,10 @@
 import AdminLayOut from "@/layouts/AdminLayOut";
 import { RouteObject } from "react-router-dom";
 
-const routes: RouteObject[] = [
+const AdminRoutes: RouteObject[] = [
   {
     path: "admin",
     element: <AdminLayOut />,
   },
 ];
-export default routes;
+export default AdminRoutes;
