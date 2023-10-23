@@ -9,7 +9,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
+<<<<<<< HEAD
           "bg-primary text-white hover:text-primary hover:bg-transparent border-primary border disabled:bg-gray-400  disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
+=======
+          "bg-primary text-white hover:text-primary hover:bg-transparent border-primary border disabled:bg-gray-400 dark:hover:bg-transparent disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
+>>>>>>> 4ab3db32156c318d6e05e09a2846a04a6d9e13d8
         secondary:
           "bg-secondary text-white hover:text-secondary hover:bg-transparent border-secondary border disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
         warning:
@@ -18,10 +22,16 @@ const buttonVariants = cva(
           "border border-primary bg-transparent text-primary hover:text-white hover:bg-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none",
         secondaryOutline:
           "border border-secondary bg-transparent text-secondary hover:text-white hover:bg-secondary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none",
+<<<<<<< HEAD
         whiteOutline:
           "border border-white bg-transparent text-white hover:text-primary hover:bg-white disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none",
         link: "bg-transparent  disabled:text-grey4 disabled:cursor-not-allowed underline underline-offset-4    hover:no-underline text-primary  hover:bg-transparent ",
         text: "bg-transparent  disabled:text-grey4 disabled:cursor-not-allowed  text-primary  hover:bg-transparent ",
+=======
+
+        link: "bg-transparent dark:bg-transparent disabled:text-grey4 disabled:cursor-not-allowed underline underline-offset-4  dark:text-slate-100  hover:no-underline text-primary  hover:bg-transparent dark:hover:bg-transparent",
+        text: "bg-transparent dark:bg-transparent disabled:text-grey4 disabled:cursor-not-allowed  text-primary  hover:bg-transparent dark:hover:bg-transparent",
+>>>>>>> 4ab3db32156c318d6e05e09a2846a04a6d9e13d8
         tag: "bg-transparent text-primary disabled:text-grey4 disabled:cursor-not-allowed cursor-default border border-primary",
       },
       size: {

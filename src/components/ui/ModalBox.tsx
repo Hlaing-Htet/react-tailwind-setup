@@ -67,7 +67,15 @@ const ModalBox = memo(
         )}
         {isOpen && (
           <div
+<<<<<<< HEAD
             className={`fixed top-0 left-0 z-[${z}] flex items-center justify-center w-screen h-screen bg-black bg-opacity-50 p-5 `}
+=======
+            className={` ${
+              isClose ? `${animateOut}` : `${animateIn}`
+            } w-full relative  ${wmd} ${wlg} rounded-lg bg-white dark:bg-black2 px-5 py-5 ${
+              heightFull ? "h-2/3 sm:h-full" : "max-h-full"
+            } overflow-y-auto overflow-x-hidden `}
+>>>>>>> 4ab3db32156c318d6e05e09a2846a04a6d9e13d8
           >
             <div
               className={` ${

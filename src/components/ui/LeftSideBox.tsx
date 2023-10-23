@@ -51,7 +51,13 @@ const LeftSideBox = memo(
         </div>
         {isOpen && (
           <div
+<<<<<<< HEAD
             className={`fixed top-0 left-0 ${z} h-screen overflow-auto flex justify-start w-screen  bg-black bg-opacity-50 `}
+=======
+            className={` ${
+              isClose ? " animate-left-out" : " animate-left-in"
+            }   relative  ${w} dark:bg-black1 bg-white min-h-screen overflow-auto p-5 flex flex-col `}
+>>>>>>> 4ab3db32156c318d6e05e09a2846a04a6d9e13d8
           >
             <div
               className={` ${

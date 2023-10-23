@@ -2,7 +2,7 @@ import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/TailwindClass";
 
-const headingVariants = cva("text-black ", {
+const headingVariants = cva("text-black dark:text-grey1 ", {
   variants: {
     size: {
       default: " text-lg md:text-xl xl:text-2xl font-bold",
