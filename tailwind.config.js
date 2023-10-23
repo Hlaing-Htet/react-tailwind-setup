@@ -14,7 +14,7 @@ export default {
         transparent: "transparent",
         current: "currentColor",
 
-        primary: "#388267",
+        primary: "#3A7AD5",
         secondary: "#1D4966",
         white: "#ffffff",
         grey1: "#F5F5F5",

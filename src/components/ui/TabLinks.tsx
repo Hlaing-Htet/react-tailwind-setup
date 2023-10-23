@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Paragraph from "./Paragraph";
 
-export function TabLinks({
+function TabLinks({
   links,
   underLine = false,
 }: {
@@ -73,7 +73,7 @@ export function TabLinks({
               to={`${link}`}
               onClick={() => setActiveIndex(index)}
               className={`py-1  ${
-                activeIndex === index ? "text-black  " : "text-black "
+                activeIndex === index ? "text-primary  " : "text-primary "
               } flex items-center gap-2 px-2  xl:px-4 transition duration-300 ease-in-out`}
             >
               <Paragraph className="capitalize whitespace-nowrap">
@@ -88,7 +88,7 @@ export function TabLinks({
           underLine
             ? " h-1"
             : "top-0 flex  items-center justify-center h-6 md:h-7 lg:h-8 text-white"
-        }   transition-all overflow-hidden duration-300 ease-in-out rounded-lg bg-brandColor1`}
+        }   transition-all overflow-hidden duration-300 ease-in-out rounded-md bg-primary`}
         style={{
           width: `${backgroundPosition.width}px`,
           transform: `translateX(${backgroundPosition.left}px)`,
@@ -104,3 +104,4 @@ export function TabLinks({
     </div>
   );
 }
+export default memo(TabLinks);

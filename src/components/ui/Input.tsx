@@ -4,7 +4,7 @@ import * as React from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const inputVariants = cva(
-  "relative flex items-center w-full focus:ring-primary focus:border-primary  px-4 py-2  rounded-md",
+  "relative flex items-center w-full focus-visible:outline-primary border border-grey2 focus:ring-primary focus:border-primary  px-4 py-2  rounded-md",
   {
     variants: {
       size: {
@@ -48,86 +48,88 @@ export interface InputProps
   passwordVisible?: boolean;
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      className,
-      size,
-      state,
-      rounded,
-      placeholder,
-      active = false,
-      error = false,
-      disabled,
-      leadIcon,
-      tailIcon,
-      passwordVisible = false,
-      type = "text",
-      errorMessage,
-      ...props
-    },
-    ref
-  ) => {
-    const [isPasswordVisible, setIsPasswordVisible] =
-      React.useState(passwordVisible);
-
-    const togglePasswordVisibility = () => {
-      setIsPasswordVisible((prevState) => !prevState);
-    };
-
-    const stateClasses = [
-      active ? " " : "",
-      error ? "border-red" : "",
-      !active && !error ? "" : "",
-      disabled ? " bg-grey2 opacity-50 cursor-not-allowed" : "",
-    ];
-
-    const inputClasses = cn(
-      inputVariants({
+const Input = React.memo(
+  React.forwardRef<HTMLInputElement, InputProps>(
+    (
+      {
+        className,
         size,
         state,
         rounded,
-        className,
-      }),
-      stateClasses
-    );
+        placeholder,
+        active = false,
+        error = false,
+        disabled,
+        leadIcon,
+        tailIcon,
+        passwordVisible = false,
+        type = "text",
+        errorMessage,
+        ...props
+      },
+      ref
+    ) => {
+      const [isPasswordVisible, setIsPasswordVisible] =
+        React.useState(passwordVisible);
 
-    return (
-      <div className="relative">
-        <div className="relative flex items-center">
-          {leadIcon && <div className="absolute z-10 left-2">{leadIcon}</div>}
-          <input
-            className={inputClasses}
-            ref={ref}
-            placeholder={placeholder}
-            disabled={disabled}
-            type={type === "password" && isPasswordVisible ? "text" : type}
-            {...props}
-          />
-          {type === "password" && (
-            <div
-              className="absolute cursor-pointer right-3"
-              onClick={togglePasswordVisibility}
-            >
-              {isPasswordVisible ? (
-                <FiEyeOff size={18} className="text-gray-400" />
-              ) : (
-                <FiEye size={18} className="text-gray-400" />
-              )}
-            </div>
+      const togglePasswordVisibility = () => {
+        setIsPasswordVisible((prevState) => !prevState);
+      };
+
+      const stateClasses = [
+        active ? " " : "",
+        error ? "border-red" : "",
+        !active && !error ? "" : "",
+        disabled ? " bg-grey2 opacity-50 cursor-not-allowed" : "",
+      ];
+
+      const inputClasses = cn(
+        inputVariants({
+          size,
+          state,
+          rounded,
+          className,
+        }),
+        stateClasses
+      );
+
+      return (
+        <div className="relative">
+          <div className="relative flex items-center">
+            {leadIcon && <div className="absolute z-10 left-2">{leadIcon}</div>}
+            <input
+              className={inputClasses}
+              ref={ref}
+              placeholder={placeholder}
+              disabled={disabled}
+              type={type === "password" && isPasswordVisible ? "text" : type}
+              {...props}
+            />
+            {type === "password" && (
+              <div
+                className="absolute cursor-pointer right-3"
+                onClick={togglePasswordVisibility}
+              >
+                {isPasswordVisible ? (
+                  <FiEyeOff size={18} className="text-gray-400" />
+                ) : (
+                  <FiEye size={18} className="text-gray-400" />
+                )}
+              </div>
+            )}
+            {!type || type !== "password" ? (
+              <div className="absolute pointer-events-none right-3">
+                {tailIcon || null}
+              </div>
+            ) : null}
+          </div>
+          {error && errorMessage && (
+            <div className="mt-1 text-sm text-red">{errorMessage}</div>
           )}
-          {!type || type !== "password" ? (
-            <div className="absolute pointer-events-none right-3">
-              {tailIcon || null}
-            </div>
-          ) : null}
         </div>
-        {error && errorMessage && (
-          <div className="mt-2 text-sm text-red">{errorMessage}</div>
-        )}
-      </div>
-    );
-  }
+      );
+    }
+  )
 );
 
 Input.displayName = "Input";

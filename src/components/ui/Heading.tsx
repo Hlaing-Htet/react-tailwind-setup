@@ -1,7 +1,6 @@
-import { FC } from "react";
-
-import { cn } from "../../utils/TailwindClass";
+import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
+import { cn } from "../../utils/TailwindClass";
 
 const headingVariants = cva("text-black ", {
   variants: {
@@ -40,22 +39,20 @@ interface HeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {}
 
-const Heading: FC<HeadingProps> = ({
-  children,
-  size,
-  align,
-  opacity,
-  className,
-  ...props
-}) => {
-  return (
-    <h1
-      {...props}
-      className={cn(headingVariants({ size, align, opacity, className }))}
-    >
-      {children}
-    </h1>
-  );
-};
+const Heading = React.memo(
+  React.forwardRef<HTMLHeadingElement, HeadingProps>(
+    ({ className, size, align, opacity, children, ...props }, ref) => {
+      return (
+        <h1
+          ref={ref}
+          {...props}
+          className={cn(headingVariants({ size, align, opacity, className }))}
+        >
+          {children}
+        </h1>
+      );
+    }
+  )
+);
 
 export default Heading;

@@ -9,24 +9,27 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-white hover:text-primary hover:bg-transparent border-primary border disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
+          "bg-primary text-white hover:text-primary hover:bg-transparent border-primary border disabled:bg-gray-400  disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
         secondary:
           "bg-secondary text-white hover:text-secondary hover:bg-transparent border-secondary border disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
+        warning:
+          "bg-yellow text-white hover:text-yellow hover:bg-transparent border-yellow border disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none disabled:hover:text-white",
         outline:
           "border border-primary bg-transparent text-primary hover:text-white hover:bg-primary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none",
         secondaryOutline:
           "border border-secondary bg-transparent text-secondary hover:text-white hover:bg-secondary disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none",
-
-        link: "bg-transparent dark:bg-transparent disabled:text-grey4 disabled:cursor-not-allowed underline underline-offset-4 hover:no-underline text-primary  hover:bg-transparent dark:hover:bg-transparent",
-        text: "bg-transparent dark:bg-transparent disabled:text-grey4 disabled:cursor-not-allowed  text-primary  hover:bg-transparent dark:hover:bg-transparent",
+        whiteOutline:
+          "border border-white bg-transparent text-white hover:text-primary hover:bg-white disabled:bg-gray-400 disabled:cursor-not-allowed disabled:border-none",
+        link: "bg-transparent  disabled:text-grey4 disabled:cursor-not-allowed underline underline-offset-4    hover:no-underline text-primary  hover:bg-transparent ",
+        text: "bg-transparent  disabled:text-grey4 disabled:cursor-not-allowed  text-primary  hover:bg-transparent ",
         tag: "bg-transparent text-primary disabled:text-grey4 disabled:cursor-not-allowed cursor-default border border-primary",
       },
       size: {
         default: " w-fit h-10 px-6",
         full: "w-full h-10",
-        squle: " w-fit px-3 py-3 text-xl",
-        squle1: " w-fit px-2 py-2 text-md",
-        squle2: " w-fit px-1 py-1 text-sm",
+        square: " w-fit px-3 py-3 text-xl",
+        square1: " w-fit px-2 py-2 text-md",
+        square2: " w-fit px-1 py-1 text-sm",
 
         large: "h-10 px-24 w-fit",
         large1: "h-10 px-28 w-fit",
@@ -70,25 +73,36 @@ export interface ButtonProps
   isLoading?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { className, children, variant, isLoading, width, size, rounded, ...props },
-    ref
-  ) => {
-    return (
-      <button
-        className={cn(
-          buttonVariants({ variant, size, width, rounded, className })
-        )}
-        ref={ref}
-        disabled={isLoading}
-        {...props}
-      >
-        {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : null}
-        {children}
-      </button>
-    );
-  }
+const Button = React.memo(
+  React.forwardRef<HTMLButtonElement, ButtonProps>(
+    (
+      {
+        className,
+        children,
+        variant,
+        isLoading,
+        width,
+        size,
+        rounded,
+        ...props
+      },
+      ref
+    ) => {
+      return (
+        <button
+          className={cn(
+            buttonVariants({ variant, size, width, rounded, className })
+          )}
+          ref={ref}
+          disabled={isLoading}
+          {...props}
+        >
+          {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : null}
+          {children}
+        </button>
+      );
+    }
+  )
 );
 Button.displayName = "Button";
 
